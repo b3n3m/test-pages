@@ -5,6 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>TEST</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
 </head>
 <body>
     Upload Files and Give Date
@@ -62,6 +63,24 @@
   document.write("Letzte Aktualisierung: " + lastModified.toLocaleString());
 </script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var apiUrl = "https://api.github.com/repos/b3n3m/test-pages/commits?path=./test.html&per_page=1";
+        $.getJSON(apiUrl, function(data) {
+            if (data.length > 0) {
+                var authorDate = data[0].commit.author.date;
+                $("#author-date").text(authorDate);
+            } else {
+                $("#author-date").text("Das File wurde noch nie aktualisiert.");
+            }
+        });
+    });
+</script>
+<h1>Letztes Autor-Datum des Commits</h1>
+	<p>Author Date des letzten Commits in test.html: <span id="author-date"></span></p>
+</body>
 
 
 </body>
