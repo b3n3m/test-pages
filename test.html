@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TEST</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    Upload Files
+    <form id="file-form">
+        <input type="file" id="file-input" accept=".txt,.pdf,.doc">
+        <button type="button" id="upload-button">Upload</button>
+        <br><br>
+        <button type="button" id="test-button">TEST</button>
+    </form>
+    <script src="fileup.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sha.js@2.4.11/sha256.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-sha256@0.9.0/src/sha256.min.js"></script>
+
+    <script>
+    const form = document.getElementById('file-form');
+    const input = document.getElementById('file-input');
+    const uploadButton = document.getElementById('upload-button');
+    
+    uploadButton.addEventListener('click', async () => {
+      const file = input.files[0];
+      if (!file) {
+        alert('Please select a file to upload.');
+        return;
+      }
+    
+      // Check the file size to ensure it's not empty
+      if (file.size === 0) {
+        alert('The selected file is empty. Please select a valid file.');
+        return;
+      }
+    
+      // Check the file format
+      if (!file.type.match(/^(text\/plain|application\/pdf|application\/msword)$/)) {
+        alert('Invalid file format. Please select a text, pdf, or word file.');
+        return;
+      }
+    
+      // Calculate the checksum of the file
+      const buffer = new Uint8Array(await file.arrayBuffer());
+      const checksum = sha256.create().update(buffer).hex();
+      console.log("Checksum for File: "+checksum)
+
+      // You can compare the calculated checksum with the expected checksum
+      // If they match, the file is not corrupt, otherwise it is corrupt
+      // You can send the calculated checksum to the server to check if it matches the expected checksum on the server
+    
+      // If the file passes all checks, you can proceed with uploading it to a server
+    });
+    </script>
+
+<script>
+  var lastModified = new Date(document.lastModified);
+  document.write("Letzte Aktualisierung: " + lastModified.toLocaleString());
+</script>
+
+
+
+</body>
+</html>
