@@ -1,0 +1,5 @@
+handle = "Lisa"
+port = 5005
+whoisport = 4001
+autoreply = "Melde mich zurück!"
+imagepath = "./images/"

@@ -1,0 +1,40 @@
+/** @mainpage Chat-Programm Gruppe 10A
+
+@section einleitung Einleitung
+Das Projekt implementiert ein dezentrales Chat-Programm, das Text- und Bildnachrichten im lokalen Netzwerk überträgt, ohne einen zentralen Server zu verwenden. Ziel ist es, Peer-to-Peer-Kommunikation inklusive automatischer Erkennung von Teilnehmern (Discovery) und Konfiguration über eine externe Datei zu ermöglichen.
+
+@section aufbau Aufbau des Programms
+Das Programm besteht aus folgenden Hauptkomponenten:
+- DiscoveryService: DiscoveryServerIPC.java, Peer.java
+- NetworkService: Config.java, imageSender.java, imageReceiver.java, ImageSenderServer.java, ImageReceiverServer.java, NetworkService.java, TestNetworkService.java
+- UI: ChatCLI.java, ChatGUI.java
+- Dokumentation: mainpage.dox, Doxyfile
+- Konfiguration: config.toml
+
+@section verwendeteTechnologien Verwendete Technologien
+- Java 11+
+- UDP/TCP Sockets
+- Swing (optional GUI)
+- VirtualBox + Ubuntu (Testumgebung)
+- Doxygen (Code-Dokumentation)
+- Git (Versionskontrolle)
+
+@section bedienung Bedienung
+Die Anwendung wird über eine einfache Kommandozeile (CLI) gesteuert. Nach dem Start können über Befehle wie `send`, `leave`, oder `img` Nachrichten verschickt oder empfangen werden.
+
+@section protokoll Protokoll
+Die Kommunikation erfolgt über das SLCP-Protokoll mit folgenden Befehlen:
+- JOIN, LEAVE
+- MSG (Textnachricht)
+- IMG (Bildnachricht)
+- WHO / KNOWUSERS
+
+@section fazit Fazit
+Das Projekt erfüllt die Anforderungen eines dezentralen Chat-Systems mit Discovery, Text- und Bildübertragung. Die Architektur ist modular aufgebaut und ermöglicht einfache Erweiterungen. Die Nutzung von Java, VirtualBox und Doxygen sorgt für eine saubere und dokumentierte Umsetzung.
+
+@section autor Autor
+Azra, Jassine, Iman, Lisa, Win 
+Frankfurt University of Applied Sciences  
+Modul: Betriebssysteme und Rechnernetze (SoSe 2025)
+
+*/

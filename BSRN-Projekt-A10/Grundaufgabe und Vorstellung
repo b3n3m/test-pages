@@ -1,0 +1,10 @@
+Hier findet unsere technische und organisatorische Umsetzung des selbsterstellten Chat-Programms im Rahmen unseres Moduls "BSRN" statt.
+
+Das Projekt umfasst die Entwicklung eines dezentralen Chat-Clients auf Basis des SLCPProtokolls. Ziel ist die Kommunikation über Text- und Bildnachrichten ohne zentralen Server in
+einem lokalen Netzwerk. Die Implementierung wird in drei Hauptprozesse unterteilt:
+- Benutzeroberfläche (CLI)
+- Netzwerk-Komponente
+- Discovery-Komponente
+Die Kommunikation zwischen den Prozessen erfolgt über Interprozesskommunikation (IPC),
+Sockets. Empfangene Bilder werden automatisch gespeichert; Textnachrichten erscheinen direkt
+in der CLI.

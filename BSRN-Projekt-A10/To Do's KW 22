@@ -1,0 +1,20 @@
+To Do's der Kalenderwoche 22:
+- AP6, AP7 (AP8)
+- Vervollständigen der AP3, AP4, AP5
+
+
+Noch in Bearbeitung:
+- Netzwerkmodul;
+      - Client Directory
+      - Broadcast Manager
+      - Image Transfer Handler
+-UI;
+      -IPC zwischen CLI und Netzwerkmodul aufbauen
+      -IPC zwischen CLI und Discovery aufbauen
+
+
+Erledigt:
+
+
+
+Notizen: 
